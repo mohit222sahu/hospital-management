@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hospital-management
+spec:
+  selector:
+    matchLabels:
+      app: hospital-management
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hospital-management
+    spec:
+      containers:
+        - name: hospital-management
+          image: hospital-management-helm:1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9091
+          env:   # Setting Environmental Variables
+            - name: DB_HOST   # Setting Database host address
+              value: mysql
+            - name: DB_NAME  # Setting Database name
+              value: HOSPITAL
+            - name: DB_USERNAME  # Setting Database username
+              value: root
+            - name: DB_PASSWORD # Setting Database password
+              value: root
+# This seperator --- below is MANDATORY!!!
+---
+# Define a 'Service' To Expose the application
+apiVersion: v1
+kind: Service
+metadata:
+  name: hospital-service
+spec:
+  ports:
+    - protocol: "TCP"
+      port: 9091    # Port inside the cluster
+      targetPort: 9091   # Port exposed to the outside
+  selector:
+    app: hospital-management
+  type: LoadBalancer
