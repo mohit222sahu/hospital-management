@@ -1,0 +1,126 @@
+
+
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+
+      <button mat-button (click)="navigateMenu('patient')">
+          <mat-icon>arrow_back</mat-icon>
+      </button>
+
+    
+     
+
+      <span >My Hospital</span>&nbsp;&nbsp;&nbsp;&nbsp;
+ <span>Appointment</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+ 
+
+
+    <mat-card class="card">
+      <!-- [formGroup]="appointForm" -->
+    <mat-card-content  [formGroup]="appointForm"> 
+     
+      
+        <h4 style="margin-right: 20px;">   Selected Date :{{this.showDate}}</h4> 
+           <h4>  Selected Time : {{this.showTime}}</h4>
+      
+           <table> 
+              
+   
+               <tr>  
+                   <td>  
+                       <label  class="labelstyle">Doctor Name  </label> 
+                        <mat-form-field appearance="fill">
+                            <mat-label>Select Doctor</mat-label>
+                            <mat-select formControlName="FieldDoctorName" (selectionChange)="stateChangeDoctor($event)" name="doctor">
+                                <mat-option *ngFor="let doctor of doctorList; let i = index" [attr.data-index]="i" [value]='doctor.id'>
+                                  {{doctor.firstName}}  {{doctor.lastName}}
+                                  <!-- <small>Id: {{doctor.doctorId}}</small> -->
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+
+
+
+
+
+
+                        <!-- <mat-form-field class="dfwidth"   appearance="outline">  
+                        <input   formControlName="FieldDoctorName" matInput placeholder="Patient Name" >  
+                           <input   formControlName="FieldDoctorName" matInput
+                           [matAutocomplete]="auto"  placeholder="Doctor Name"  > 
+                           <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let doctor of filteredDoctor | async" [value]="doctor.firstName" >
+                              <span>{{doctor.firstName}} {{doctor.lastName}}</span> |
+                              <small>Id: {{doctor.doctorId}}</small>
+                            </mat-option>
+                          </mat-autocomplete> 
+                        </mat-form-field>  
+                       </td> 
+                      -->
+                        
+                      
+                    
+
+
+                   <td>  
+                       <label class="labelstyle">Patient Name</label> 
+                       <mat-form-field class="dfwidth"   appearance="outline">  
+                           <input   formControlName="FieldPatientName" matInput placeholder="Patient Name"  readonly>  
+                       </mat-form-field>  
+                       </td> 
+
+                      </tr>
+
+                      
+                        
+                        
+                      
+                      
+               <tr  >
+                 <td colspan="2" >
+                 <!-- <label class="labelstyle" style="margin-right: 30px;"> Add Schedule  </label>               
+                <button mat-icon-button (click)="onSchedule()" >
+                  <mat-icon>open_in_new</mat-icon>
+                </button> -->
+             
+ <!-- <button class="view" (click)="doctorLists()">List</button>[(ngModel)]="showDate"   [(ngModel)]="showTime"-->
+<div *ngFor="let item of myMap | keyvalue" >
+  
+  Date: <b >{{item.key}}</b> <br>
+  
+
+  <div class="schedule" *ngFor="let value of item.value">
+    
+    <button id="slot"  (click)="setSch(item,value)">{{value.time}}</button>
+      
+  </div>
+  
+</div>
+
+<!-- <div class="example-button-row">
+  <button mat-raised-button color="primary"  (click)="onSave()">Add</button>
+</div>  -->
+
+                 </td>
+               </tr>
+               
+               
+   </table>
+ 
+     
+    </mat-card-content>
+   
+           
+    <mat-card-actions>
+          
+                <!-- <button class="mat-raised-button mat-warn"(click)="onClose()" style="margin-right: 20px;">Close</button
+               <button class="mat-raised-button mat-primary" (click)="onFormSubmit()" >Save</button>
+               <button mat-raised-button color="warn" >close</button>
+           -->
+           <button class="mat-raised-button mat-primary" (click)="onSave()"  [disabled]="!appointForm.valid" >Save</button>
+    </mat-card-actions>
+   

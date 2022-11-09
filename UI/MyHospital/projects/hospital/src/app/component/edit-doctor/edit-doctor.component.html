@@ -1,0 +1,84 @@
+<mat-toolbar color="primary">
+  <h2 mat-dialog-title color="primary">{{description}}</h2>
+  <span class="example-spacer"></span>
+  <!-- <button  mat-button color="white" (click)="onClose()">X</button>-->
+  <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+    <mat-icon class="close-icon" color="black">close</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-dialog-content class="dialogs" [formGroup]="editDoctorForm">
+  <table>
+    <tr>
+      <td>
+        <label  class="labelstyle">FirstName  </label>
+        <mat-form-field  appearance="outline">
+          <input   formControlName="FieldFirstName" matInput placeholder="First Name"  >
+        </mat-form-field> </td>
+        <td>
+          <label class="labelstyle">LastName</label>
+          <mat-form-field class="demo-full-width"   appearance="outline">
+            <input   formControlName="FieldLastName" matInput placeholder="Last Name" >
+          </mat-form-field>
+        </td>
+        <td >
+          <label class="labelstyle">Address</label>
+          <mat-form-field class="demo-full-width"  appearance="outline">
+            <textarea formControlName="FieldAddress" matInput placeholder="Address"  appearance="outline" ></textarea>
+          </mat-form-field>
+        </td>
+      </tr>
+
+      <tr>
+        <td >
+          <label class="labelstyle">Email Id</label>
+          <mat-form-field class="demo-full-width"  appearance="outline">
+            <input  formControlName="FieldEmail" matInput placeholder="Email">
+          </mat-form-field>
+        </td>
+        <td>
+          <label class="labelstyle">Contact No.</label>
+          <mat-form-field class="demo-full-width"  appearance="outline">
+            <span matPrefix>+91 &nbsp;</span>
+            <input   formControlName="FieldContactNumber" matInput placeholder="Contact No." required maxlength="10" minlength="10" >
+          </mat-form-field>
+        </td>
+        <td>
+          <label class="labelstyle">Age</label>
+          <mat-form-field class="demo-full-width" appearance="outline">
+            <input   formControlName="FieldAge" matInput placeholder="Age" type="number"  required maxlength="3">
+          </mat-form-field>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label class="labelstyle">Specialization</label>
+          <mat-form-field appearance="outline">
+            <mat-label>select specialization</mat-label>
+            <mat-select formControlName="FieldSpecialization"  >
+              <mat-option *ngFor="let specialization of specializations" [value]="specialization.value">
+                {{specialization.value}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+        <td >
+          <label class="labelstyle">Qualification</label> 
+          <mat-form-field class="demo-full-width"  appearance="outline">
+            <input formControlName="FieldQualification" matInput placeholder="Qualification">
+          </mat-form-field>
+        </td>
+        <td >
+          <label class="labelstyle">Fee</label>
+          <mat-form-field class="demo-full-width"  appearance="outline">
+            <input formControlName="FieldFee" matInput placeholder="Fee" type="number">
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button class="mat-raised-button mat-primary"(click)="onFormSubmit()">Save</button>
+  </mat-dialog-actions>

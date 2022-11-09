@@ -1,0 +1,63 @@
+<mat-toolbar color="primary">
+  <h2  mat-dialog-title  >
+   {{description}}</h2>
+   <span style="margin-left: 620px;">
+    <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+      <mat-icon class="close-icon" color="black">close</mat-icon>
+    </button>
+  </span>
+  
+  </mat-toolbar>
+  
+  <br><br>
+  
+ <mat-dialog-content [formGroup]="prescriptionForm"  >
+  <section *ngFor="let pre of prescription; let i = index;">
+    <mat-form-field appearance="outline">
+
+      <mat-label> Type</mat-label>
+
+      <mat-select formControlName="FieldPrescriptionType">
+
+          <mat-option *ngFor="let pre of prescriptions" [value]="pre.value">
+              {{pre.value}}
+          </mat-option>
+      </mat-select>
+  </mat-form-field>
+  
+    
+      
+     
+      <mat-form-field  appearance="outline" style="margin-left: 20px;">  
+        <input   formControlName="FieldTypes" matInput placeholder="Name" #type cdkFocusInitial  >  
+    </mat-form-field> 
+
+    
+    <mat-form-field appearance="outline" style="margin-left: 20px;">
+      <input matInput type="time"  formControlName="FieldSchedule" placeholder="start date" cdkFocusInitial>
+    </mat-form-field>
+    
+    
+
+
+    
+    <span style="padding-left: 142px;" >
+    
+    <button type="button" class="btn btn-danger btn-sm" (click)="removeAddress(i)"> <mat-icon>remove_circle_outline</mat-icon>
+    </button>
+    </span>
+
+
+  </section>
+ &emsp;
+  </mat-dialog-content>
+  <button mat-mini-fab color="white" aria-label="Example icon button with a plus one icon" (click)="addPrescription()">
+    <mat-icon >add</mat-icon>
+  </button>
+  <mat-dialog-actions>
+    
+      <button class="mat-raised-button"(click)="close()">Close</button>
+
+  <button mat-raised-button color="primary" (click)="openSnackBar()" class="mat-raised-button mat-primary"(click)="onFormSubmit()" style="margin-left: 20px;">Save</button>
+      
+    </mat-dialog-actions>

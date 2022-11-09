@@ -1,0 +1,28 @@
+
+<mat-toolbar class="tool" color="primary">
+  <h2 mat-dialog-title color="primary">{{description}}</h2>
+  <span class="example-spacer"></span>
+  <!-- <button  mat-button color="white" (click)="onClose()">X</button>-->
+  <button mat-icon-button class="close-button" [mat-dialog-close]="true"> 
+     <mat-icon class="close-icon" color="black">close</mat-icon>
+     </button>
+ </mat-toolbar>
+
+
+<button class="view" (click)="doctorList()">List</button>
+<div *ngFor="let item of myMap | keyvalue" >
+  
+  Date: <b>{{item.key}}</b> <br>
+  
+
+  <div class="schedule" *ngFor="let value of item.value">
+    
+    <button id="slot" (click)="setSch(item,value)">{{value}}</button>
+      
+  </div>
+  
+</div>
+
+<div class="example-button-row">
+  <button mat-raised-button color="primary"  (click)="onSave()">Add</button>
+</div>

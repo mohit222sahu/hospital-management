@@ -1,0 +1,35 @@
+<button mat-button [matMenuTriggerFor]="menu">
+  <mat-icon>more_vert</mat-icon>
+</button>
+
+<mat-menu #menu="matMenu">
+
+<button mat-menu-item
+  (click)="navigateMenu($event)"
+  matTooltip="Make Schedule">
+  <mat-icon  class="span" color="accent">launch</mat-icon>
+  Create Schedule
+</button>
+
+<button mat-menu-item
+matTooltip="Edit Doctor Details"
+(click)="onEdit($event)">
+<mat-icon class="span" color="primary">edit</mat-icon>
+Edit
+</button>
+
+<button mat-menu-item
+matTooltip="Delete doctor"
+(click)="onDelete($event)">
+<mat-icon class="span" color="warn">delete</mat-icon>
+Delete
+</button>
+
+<button mat-menu-item
+matTooltip="View doctor"
+(click)="onView($event)">
+<mat-icon class="span" color="primary">preview</mat-icon>
+View
+</button>
+
+</mat-menu>

@@ -1,0 +1,53 @@
+<mat-toolbar class="header">
+  <button mat-button (click)="back()">
+    <mat-icon>arrow_back</mat-icon>
+</button>
+  <h2>My Hospital</h2></mat-toolbar>
+
+<div class="doctorSch">
+  <mat-toolbar class="header">
+    <h2>Create Schedule</h2></mat-toolbar>
+  <div class="nameID">
+      <mat-card>
+      <!-- <b>Doctor ID : {{this.dId}}</b><br> -->
+      <b>Doctor Name : {{this.dfirstName}} {{this.dlastName}}</b>
+      </mat-card>
+  </div>
+  
+  <div class="datepicker">
+      <mat-card id="mtc">
+  <!-- <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Pick a date" (dateChange)="valueChange($event)">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker ></mat-datepicker> -->
+  <mat-form-field appearance="fill">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" (dateChange)="valueChange($event)">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  </mat-card>
+  </div>
+  
+  
+  <div style="padding: 50px; width:400px;">
+         <!-- <mat-list> -->
+    
+           <div class="cards">
+            <div class="card" *ngFor="let item of checkbox_list1">
+  
+              <mat-checkbox class="ckbox"
+              [(ngModel)]="item.checked"
+              [disabled]="item.disabled"
+              [labelPosition]="item.labelPosition"
+              (change)="list_change(item)"
+              style="font-size: 18px;"
+              >{{ item.name }}</mat-checkbox>
+      </div>
+      <br><br><br><span id="bttns">
+      <button class="mat-raised-button mat-primary" (click)="onSave()">Save</button>&nbsp;&nbsp;&nbsp; 
+       <button class="mat-raised-button mat-white" (click)="cancel()">Cancel</button>     
+      </span>     
+      </div>
+    </div>
+          <!-- </mat-list> -->
+   

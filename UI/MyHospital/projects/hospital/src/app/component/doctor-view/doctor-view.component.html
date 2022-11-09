@@ -1,0 +1,46 @@
+<div>
+  <mat-toolbar>
+    <button class="backBtn"> <mat-icon (click)="back()">arrow_back</mat-icon></button>
+    &nbsp;
+    <h2>Doctor Details</h2>
+  </mat-toolbar>
+  <div class="doctorDetailDiv">
+    <label>Doctor ID : </label> <label>{{this.doctorId}}</label><br><br>
+    <label>Name : </label><label>{{this.firstName}} {{this.lastName}}</label><br><br>
+    <label>Age : </label><label>{{this.age}}</label><br><br>
+    <label>Contact : </label><label>{{this.contactNumber}}</label><br><br>
+    <label>Email : </label><label>{{this.email}}</label><br><br>
+    <label>Address : </label><label>{{this.address}}</label><br><br>
+    <label>Qualification : </label><label>{{this.qualification}}</label><br><br>
+    <label>Specialization : </label><label>{{this.specialization}}</label><br><br>
+    <label>Fee : </label><label>{{this.fee}}</label><br><br>
+  </div>
+
+  <div class="scheduleTable">
+    <mat-toolbar color="primary">
+      <h2>Schedule</h2>
+    </mat-toolbar>
+
+    <div class="roomTable" >
+      <table id="customers">
+        <thead>
+          <tr>
+            <th>Schedule Date</th>
+            <th>Schedule Time</th>
+            <th>Patient Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <tr *ngFor="let schedule of scheduleList ">
+              <!-- <td>{{room.roomAllotementId}}</td> -->
+              <td>{{schedule.date}}</td>
+              <td>{{schedule.time}}</td>
+              <td>{{schedule.patientName}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>

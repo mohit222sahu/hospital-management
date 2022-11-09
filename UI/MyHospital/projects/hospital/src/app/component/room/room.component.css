@@ -1,0 +1,64 @@
+.myDivision{
+    margin-left: 400px;
+margin-top: 59px;
+margin-right: 0px;
+border-top-width: 0px;
+height: 240px;
+width: 420px;
+
+}
+
+.backBtn{
+  margin-left: 30px;
+  color:white;
+  background-color: #3f51b5;
+  border: none;
+}
+.myClass{
+width: 200px;
+}
+    .isBooked{
+    background-color:white;
+    color:black;
+    width: 100px;
+    height: 30px;
+    border-radius: 8px;
+    border:none;
+    box-shadow: 1px 1px;
+}
+.isNotBooked{
+    background-color:#3f51b5;
+    color:white;
+    width: 100px;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+}
+
+
+#customers{
+    font-family: Arial, Helvetica, sans-serif;
+   border-collapse: collapse; 
+  width: 100%;
+}
+
+#customers td, #customers th {
+    /* border: 1px solid #ddd; */
+    padding: 10px;
+    text-align: center; 
+    margin-bottom: 10px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #fcfcfc;}
+  
+  #customers tr:hover {background-color: rgb(210, 218, 231);}
+  
+  #customers th {
+      
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #2c3ec9;
+    color: rgb(255, 255, 255);
+    margin-bottom: 30px;
+  }

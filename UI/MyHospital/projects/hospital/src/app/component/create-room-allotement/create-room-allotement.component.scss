@@ -1,0 +1,46 @@
+.roomA{
+    margin-left: 300px;
+    margin-top: 50px;
+    border: solid black 1px;
+    padding: 0px;
+    padding-bottom: 30px;
+    width: 600px;
+}
+.roomB{
+   
+    padding: 20px;
+}
+.lbl{
+    font-size: 20px;
+    font:bold
+}
+.cancel{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    margin-left: 20px;
+
+
+}
+.backBtn{
+    margin-left: 30px;
+    color:white;
+    background-color: #3f51b5;
+    border: none;
+  }
+.alloteBtn{
+    background-color:#3f51b5;
+    color: white;
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+::ng-deep .blue-snackbar {
+    background: #06c254;
+    font-weight: bold  !important;
+    .mat-simple-snackbar-action {
+      color: rgb(255, 255, 255) !important;
+  }}

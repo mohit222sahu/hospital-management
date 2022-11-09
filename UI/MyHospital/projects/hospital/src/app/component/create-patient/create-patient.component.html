@@ -1,0 +1,89 @@
+<mat-toolbar color="primary">
+  <h2 mat-dialog-title>
+    {{description}}</h2>
+    <span style="margin-left:auto;"> </span>
+    <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+      <mat-icon class="close-icon" color="black">close</mat-icon>
+    </button>
+  </mat-toolbar>
+  
+  <br>
+
+  <mat-dialog-content [formGroup]="patientForm">
+    <table>
+      <tr>
+        <td>
+          <label class="labelstyle">First Name </label>
+          <mat-form-field appearance="outline">
+            <input formControlName="FieldFirstName" matInput placeholder="First Name">
+          </mat-form-field>
+        </td>
+        <td>
+          <label style="margin-left: 30px;" class="labelstyle">Last Name</label>
+          <mat-form-field  style = "margin-left:30px;" class="demo-full-width" appearance="outline">
+            <input  formControlName="FieldLastName" matInput placeholder="Last Name">
+          </mat-form-field>
+        </td>
+        <td style="padding: 10;">
+
+          <label style="margin-left: 30px;"  class="labelstyle">Age</label>
+          <mat-form-field style="margin-left: 30px;"  class="demo-full-width" appearance="outline">
+            <input formControlName="FieldAge" matInput placeholder="Age" type="number" required maxlength="3">
+          </mat-form-field>
+        </td>
+      </tr>
+
+      <tr>
+        <td> <label class="labelstyle">Gender</label>
+          <mat-form-field appearance="outline">
+            <mat-label> Select gender</mat-label>
+            <mat-select formControlName="FieldGender">
+              <mat-option *ngFor="let gender of genders" [value]="gender.value">
+                {{gender.value}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+        <td>
+          <label style="margin-left: 30px;"  class="labelstyle">Contact No </label>
+          <mat-form-field  style="margin-left: 30px;" class="demo-full-width" appearance="outline">
+            <span matPrefix>+91 &nbsp;</span>
+            <input formControlName="FieldMobileNumber" required maxlength="10" matInput placeholder="Contact No.">
+          </mat-form-field>
+        </td>
+        <td>
+          <label style="margin-left: 30px;"  class="labelstyle">City</label>
+          <mat-form-field style="margin-left: 30px;"  class="demo-full-width" appearance="outline">
+            <input formControlName="FieldCity" matInput placeholder="City.">
+          </mat-form-field>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label class="labelstyle">Address</label>
+          <mat-form-field  class="demo-full-width" appearance="outline">
+            <textarea formControlName="FieldAddress" matInput placeholder="Address"  appearance="outline" ></textarea>
+          </mat-form-field>
+        </td>
+        <td>
+          <label style="margin-left: 30px;"  class="labelstyle"> Emergency Contact No.</label>
+          <mat-form-field  style="margin-left: 30px;" class="demo-full-width" appearance="outline">
+            <span matPrefix>+91 &nbsp;</span>
+            <input formControlName="FieldEM" required maxlength="10" matInput placeholder=" Contact No.">
+          </mat-form-field>
+        </td>
+        <td>
+          <label style="margin-left :30px;" class="labelstyle">Email ID</label>
+          <mat-form-field  style="margin-left: 30px;" class="demo-full-width" appearance="outline">
+            <input formControlName="FieldEmail" matInput placeholder="Email id.">
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button class="mat-raised-button mat-primary" (click)="onFormSubmit()">Save</button>
+    <button  style="margin-left: 10px;" class="mat-raised-button" (click)="onClose()">Cancel</button>
+  </mat-dialog-actions>

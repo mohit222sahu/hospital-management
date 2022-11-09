@@ -1,0 +1,106 @@
+.menubtn{
+    background-color: blue;
+    border:none;
+    height: 35px;
+    width:40px;
+    margin-left: 10px;
+    color:white;
+}
+.header{
+    background-color: rgb(46, 46, 167);
+    color: white;
+}
+.head{
+    margin-left: 450px;
+    color: white;
+}
+.navbar navbar-expand-sm bg-primary navbar-dark{
+    color:blue;
+}
+.nameID{
+    margin-left: 70px;
+    margin-top:20px;
+    font-size: 15px;
+    width:300px;
+    
+}
+.datepicker{
+    width: 300px;
+    margin-left: 650px;
+    margin-top: -67px;
+    
+}
+#mtc{
+    padding-left: 28px;
+    height: 50px;
+    padding-top: 10px;;
+}
+.card{
+    background-color:rgb(220, 243, 239);
+    border: rgb(141, 160, 157);
+    margin-top: 10px;
+   color:black;
+  width: 250px;
+   padding:15px;
+    display: inline-block;
+    margin-right: 20px;
+    height: 30px;
+    padding-top:30px;
+    text-align: center;
+}
+
+.cards{
+    /* background-color: red; */
+    width: 1000px;
+    height:400px;
+    margin-left: 20px;
+}
+.saveBtn{
+    background-color: rgb(35, 125, 199);
+    border-radius: 8px;
+    color:white;
+    width: 100px;
+    height: 40px;
+    margin-top: 60px;
+    margin-left: 330px;
+   
+}
+#bttns{
+    margin-left: 380px;
+}
+.doctorSch{
+    width: 1000px;
+    margin-top: 20px;
+    margin-left: 140px;
+    height: 550px;
+    background-color: rgb(248, 246, 229);
+}
+.cancelBtn{
+    background-color: rgb(168, 166, 165);
+    border-radius: 8px;
+    color:white;
+    width: 100px;
+    height: 40px;
+    margin-top: 60px;
+    margin-left: 30px;
+}
+
+::ng-deep .blue-snackbar {
+    background: #06c254;
+    font-weight: bold  !important;
+  
+}
+
+
+::ng-deep .red-snackbar {
+    background: #ee4a2c;
+    font-weight: bold  !important;
+  
+}
+
+.backBtn{
+    margin-left: 10px;
+    color:white;
+    background-color: #3f51b5;
+    border: none;
+  }

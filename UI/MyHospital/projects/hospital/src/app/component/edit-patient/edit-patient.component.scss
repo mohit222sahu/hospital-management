@@ -1,0 +1,27 @@
+.span {
+    margin: auto;
+}
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: black;
+  }
+
+
+
+  .labelstyle {
+    color: #000000;
+    font-weight: bold;
+    display: block;
+    width: 150px;
+    
+    }
+    labelstyle:after { content: ": " }
+
+    ::ng-deep .blue-snackbar {
+        background: #06c254;
+        .mat-simple-snackbar-action {
+          color: rgb(255, 255, 255) !important;
+      }}
+  

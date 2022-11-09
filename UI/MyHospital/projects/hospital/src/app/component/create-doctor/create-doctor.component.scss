@@ -1,0 +1,44 @@
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: black;
+}
+
+.dialogs{
+  max-height: fit-content;
+}
+::ng-deep .mat-dialog-container {
+  overflow-y: hidden !important;
+}
+
+
+.labelstyle {
+  color: #000000;
+  font-weight: bold;
+  display: block;
+  width: 150px;
+
+}
+labelstyle:after { content: ": " }
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+::ng-deep .blue-snackbar {
+  background: #06c254;
+  font-weight: bold  !important;
+  .mat-simple-snackbar-action {
+    color: rgb(255, 255, 255) !important;
+  }}
+
+  .mat-snack-bar-container {
+    max-width: 800px;
+  }
+
+  ::ng-deep .red-snackbar{
+    background: #c03b3b;
+    font-weight: bold  !important;
+    .mat-simple-snackbar-action {
+      color: rgb(255, 255, 255) !important;
+    }
+
+  }

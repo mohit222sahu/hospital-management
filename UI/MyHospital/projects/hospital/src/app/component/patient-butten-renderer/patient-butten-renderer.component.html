@@ -1,0 +1,86 @@
+<!-- <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+  
+  
+  
+  <button mat-menu-item
+  matTooltip="Edit Patient Details"
+  (click)="onClick($event)">
+  <mat-icon class="span" color="primary">edit</mat-icon>
+  Edit
+    </button>
+  
+  
+  
+  <button mat-menu-item 
+  matTooltip="Delete Patient"
+  (click)="onClick($event)">
+  <mat-icon class="span" color="warn">delete</mat-icon>
+  Delete
+    </button>
+  
+  </mat-menu>    [disabled]="!done" -->
+
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  
+  <mat-menu #menu="matMenu">
+  
+  <button mat-menu-item 
+  (click)="navigateMenu('appointment')"
+  matTooltip="Make Appointment"
+  [disabled]="!appointDone"   
+   >
+  <mat-icon  class="span" color="accent">launch</mat-icon>
+  Appointment
+  </button>
+
+
+
+  <button mat-menu-item
+  matTooltip="Edit Patient Details"
+  (click)="onEdit($event)">
+  <mat-icon class="span" color="primary">edit</mat-icon>
+  Edit
+
+  </button>
+
+
+  <button mat-menu-item
+  matTooltip="Prescription"
+  (click)="onPrescription($event)"
+  [disabled]="!prescriptionDone">
+  <mat-icon class="span" color="primary">launch</mat-icon>
+  Prescription
+
+  </button>
+
+  <button mat-menu-item
+  matTooltip="Room Allocate"
+  (click)="roomAllote($event)"
+  [disabled]="!roomAllotmentDone">
+  <mat-icon class="span" color="primary">fact_check</mat-icon>
+ Room Allocation
+
+  </button>
+
+
+  <button mat-menu-item 
+   matTooltip="Delete patient"
+  (click)="onClick($event)">
+  <mat-icon class="span" color="warn">delete</mat-icon>
+  Delete
+  </button>
+
+  <button mat-menu-item
+  matTooltip="View"
+  (click)="onView($event)">
+  <mat-icon class="span" color="primary">preview</mat-icon>
+  View
+
+  </button>
+
+  </mat-menu>

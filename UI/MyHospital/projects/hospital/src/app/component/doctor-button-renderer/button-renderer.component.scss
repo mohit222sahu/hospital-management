@@ -1,0 +1,11 @@
+.span {
+    margin: auto;
+}
+
+::ng-deep .red-snackbar{
+    background: #e68e29;
+    font-weight: bold  !important;
+    .mat-simple-snackbar-action {
+      color: rgb(255, 255, 255) !important;
+  }
+}

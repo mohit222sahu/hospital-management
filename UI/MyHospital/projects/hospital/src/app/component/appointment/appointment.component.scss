@@ -1,0 +1,70 @@
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: black;
+  }
+
+
+
+  .labelstyle {
+    color: #000000;
+    font-weight: bold;
+    display: block;
+    width: 150px;
+    
+    }
+    labelstyle:after { content: ": " }
+
+    .example-spacer {
+      flex: 1 1 auto;
+    }
+.dfwidth{
+  min-width:250px;
+}
+   
+    .span {
+      margin: 30px;
+  }
+
+  .card {
+ margin-left: 2%;
+ margin-top: 50px;
+ max-width: 90%;
+
+  }
+
+  
+  ::ng-deep .blue-snackbar {
+    background: #06c254;
+    font-weight: bold  !important;
+    .mat-simple-snackbar-action {
+      color: rgb(255, 255, 255) !important;
+  }}
+
+
+
+  .schedule{
+    display: inline-block;
+    
+     }
+ #slot:active{
+     background-color:white;
+      color:black
+     }
+ #slot{
+     width: 100px;
+     margin: 5px;
+     background-color: #3f51b5;
+     color: white;
+     border-radius: 5px;
+     border:none;
+     padding: 5px;
+ }
+ .view{
+     width:50px;
+     height:40px;
+     margin-top: 20px;
+     background-color: blue;
+     color: white;
+     border: none;
+     border-radius: 6px;
+ }
+ 

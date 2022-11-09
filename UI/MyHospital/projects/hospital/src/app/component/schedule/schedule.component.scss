@@ -1,0 +1,29 @@
+.schedule{
+   display: inline-block;
+   
+    }
+#slot:active{
+    background-color: red;
+    }
+#slot{
+    width: 100px;
+    margin: 5px;
+    background-color: chartreuse;
+    border-radius: 5px;
+    border:none;
+    padding: 5px;
+}
+.view{
+    width:50px;
+    height:40px;
+    margin-top: 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 6px;
+}
+
+
+.example-spacer {
+    flex: 1 1 auto;
+  }

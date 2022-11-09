@@ -1,0 +1,45 @@
+
+<h2>Filter</h2>
+<mat-dialog-content class="dialogs" > 
+    <table> 
+        <tr>
+<td>
+          <mat-form-field appearance="fill">
+            <mat-label>Filter Type</mat-label>
+            <mat-select [(ngModel)]="selectedFilterType" >
+              <mat-option *ngFor="let filter of filterTypes" [value]="filter.value">
+                {{filter.types}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>    
+
+        </td>
+      <td>
+    <mat-form-field matInput  style="margin-right: 20px;"  class="example-full-width">
+      <mat-label>filter data</mat-label>
+      <input matInput    [(ngModel)]="filterData" style="margin-right: 20px;"  >
+    </mat-form-field>
+  </td>
+    <!-- <mat-form-field class="example-full-width" >
+      <mat-label>City</mat-label>
+      <input matInput  [(ngModel)]="city"placeholder="city">
+    </mat-form-field> -->
+</tr>
+<tr>
+    <!-- <mat-form-field class="example-full-width" >
+        <mat-label>Contact No</mat-label>
+        <input matInput [(ngModel)]="contact" placeholder="Contact" >
+      </mat-form-field> -->
+    </tr>
+</table>
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+  
+  
+     <!-- <button class="mat-raised-button mat-warn"(click)="onClose()" style="margin-right: 20px;">Close</button>
+       -->
+       <button class="mat-raised-button "  style="margin-right: 20px;"  (click)="back()">Close</button>
+        <button class="mat-raised-button mat-primary"   (click)="filter()">Apply</button>
+
+    </mat-dialog-actions>

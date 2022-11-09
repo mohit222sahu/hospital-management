@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+  <button class="backBtn"> <mat-icon (click)="back()">arrow_back</mat-icon></button>
+&nbsp;
+  <h2>My Hospital</h2>
+  </mat-toolbar>
+
+    <div class="myDivision">
+        <table id="customers">
+            <thead>
+              <tr>
+                <th scope="col">Room No</th>
+                <th class="myClass" scope="col">Availability</th>
+              </tr>
+              
+            </thead><br>
+                    <tbody>
+                        <tr *ngFor="let room of rooms">
+                            <td>{{room.roomNo}}</td>
+                            <!-- <td>{{room.isBooked}}</td> -->
+                           
+                            <button *ngIf="room.is_booked" class="isBooked" disabled>Booked</button>
+                            <button *ngIf="!room.is_booked" class="isNotBooked" (click)="booked(room)">Book</button>
+                        </tr>
+                        </tbody>
+        </table>
+        </div>

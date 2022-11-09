@@ -1,0 +1,11 @@
+<ag-grid-angular
+style="height: 700px;"
+class="ag-theme-alpine"
+[rowData]="rowData"
+[columnDefs]="columnDefs"
+[frameworkComponents]="frameworkComponents"
+(gridReady)="onGridReady($event)"
+[pagination]="true"
+[paginationPageSize]="paginationPageSize"
+[paginationNumberFormatter]="paginationNumberFormatter">
+</ag-grid-angular>

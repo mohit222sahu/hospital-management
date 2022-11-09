@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row style="margin-left: -20px;">
+    <button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="navigateMenu('Doctor')">Doctor </button>
+      <button mat-menu-item (click)="navigateMenu('Patient')">Patient</button>
+      <button mat-menu-item (click)="navigateMenu('Room Allotment')">Room Allotment</button>
+      <button mat-menu-item (click)="navigateMenu('Appointment')">Appointment</button>
+    </mat-menu>
+    <span >My Hospital</span>&nbsp;&nbsp;&nbsp;&nbsp;
+    <span style="font-size: 18px;" >{{selectedTab}}</span>
+    <span class="example-spacer"></span>
+    <div fxLayout="row" fxLayoutAlign="end start" >
+      <button mat-icon-button class="example-icon" (click)="redirectTologin()" >
+        <mat-icon>login</mat-icon>
+      </button>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end start" >
+      <button mat-icon-button class="example-icon" (click)="refreshGrid()" >
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end start" >
+      <button mat-icon-button class="example-icon" (click)="onCreate()" >
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,39 @@
+ <table id="customers">
+    <thead>
+            <tr>
+
+                <!-- <th>RoomAllotementID</th> -->
+                <th>Room No</th>
+                <th>Patient Id</th>
+                <th>Patient Name</th>
+                <th>Is Booked</th>
+                <th>Booked Date</th>
+                <th>Discharge Date</th>
+                <th>Actions</th>
+
+                </tr>
+            </thead>
+                    <tbody>
+                        <tr *ngFor="let room of roomAllotement">
+                            <!-- <td>{{room.roomAllotementId}}</td> -->
+                            <td>{{room.room.roomNo}}</td>
+                            <td>PAT- {{room.patient.id}}</td>
+                            <td>{{room.patient.first_name}} {{room.patient.last_name}}  </td>
+                            <td *ngIf="room.dischargeDate==undefined">Yes</td>
+                            <td *ngIf="room.dischargeDate!=undefined">No</td>
+
+                            <td>{{room.bookedDate}}</td>
+                            <td>{{room.dischargeDate}}</td>
+                            <td><button *ngIf="room.dischargeDate==undefined" mat-button [matMenuTriggerFor]="aboveMenu" class="mnubtn"><img src="../../assets/threee.png" height="20px"></button>
+                                <button *ngIf="room.dischargeDate!=undefined" mat-button [matMenuTriggerFor]="aboveMenu" class="mnubtn" disabled><img src="../../assets/threee.png" height="20px"></button>
+                                <mat-menu #aboveMenu="matMenu" yPosition="above">
+                                  <!-- <button mat-menu-item (click)="delete(room)">Delete</button> -->
+                                  <button *ngIf="room.dischargeDate==undefined" mat-menu-item (click)="discharge(room)">Discharge</button>
+
+                                </mat-menu>
+                                </td>
+                            </tr>
+                        </tbody>
+
+        </table>
+        <router-outlet></router-outlet>
