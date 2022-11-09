@@ -1,7 +1,4 @@
-package com.innoeye.hospitalmanagementsystem.authentication.model;
-
-import org.springframework.stereotype.Component;
-
+package com.innoeye.hospitalmanagementsystem.util;
 
 public class HospitalAuthenticationResponse {
 	private final String token;

@@ -1,8 +1,5 @@
-package com.innoeye.hospitalmanagementsystem.authentication.model;
+package com.innoeye.hospitalmanagementsystem.util;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class HospitalAuthenticationRequest {
 
 	private String userName;

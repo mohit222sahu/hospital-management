@@ -13,6 +13,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "room_details")
 public class RoomDetails implements Serializable {
+	
+	
 	/**
 	 * 
 	 */
@@ -23,60 +25,89 @@ public class RoomDetails implements Serializable {
 	@Column(name = "room_no")
 	private Integer roomNo;
 
+	
+
 	@Column(name = "room_type")
-	private String roomType;
+	private String room_type;
 
 	@Column(name = "price")
 	private Integer price;
 	
 	@Column(name = "is_booked")
-	private Boolean isBooked;
+	private Boolean is_booked;
+
+
+
+	
 
 
 	public Integer getRoomNo() {
 		return roomNo;
 	}
 
+
+
 	public void setRoomId(Integer roomId) {
 		this.roomNo = roomId;
 	}
 
+
+
 	public RoomDetails(Integer roomNo, String room_type, Integer price, Boolean is_booked) {
 		super();
 		this.roomNo = roomNo;
-		this.roomType = room_type;
+		this.room_type = room_type;
 		this.price = price;
-		this.isBooked = is_booked;
+		this.is_booked = is_booked;
 	}
+
+
 
 	public RoomDetails() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public String getRoomType() {
-		return roomType;
+
+
+	public String getRoom_type() {
+		return room_type;
 	}
 
-	public void setRoomType(String room_type) {
-		this.roomType = room_type;
+
+
+	public void setRoom_type(String room_type) {
+		this.room_type = room_type;
 	}
+
+
 
 	public Integer getPrice() {
 		return price;
 	}
 
+
+
 	public void setPrice(Integer price) {
 		this.price = price;
 	}
 
-	public Boolean getIsBooked() {
-		return isBooked;
+
+
+	public Boolean getIs_booked() {
+		return is_booked;
 	}
 
-	public void setIsBooked(Boolean is_booked) {
-		this.isBooked = is_booked;
+
+
+	public void setIs_booked(Boolean is_booked) {
+		this.is_booked = is_booked;
 	}
+
+	
+	
+	
+	
 
 }
 								

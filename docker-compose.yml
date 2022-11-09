@@ -5,13 +5,13 @@ services:
     ports:
       - "9091:9091"
     environment:
-      - spring.datasource.url=jdbc:mysql://mysql:3306/HOSPITAL?allowPublicKeyRetrieval=true&useSSL=false
+      - spring.datasource.url=jdbc:mysql://mysqldb:3306/HOSPITAL?allowPublicKeyRetrieval=true&useSSL=false
     networks:
       - hospital-mysql
     depends_on:
-      - mysql
+      - mysqldb
        
-  mysql:
+  mysqldb:
     image: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root

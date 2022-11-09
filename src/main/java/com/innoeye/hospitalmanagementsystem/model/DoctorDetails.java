@@ -3,14 +3,14 @@ package com.innoeye.hospitalmanagementsystem.model;
 import java.io.Serializable;
 
 import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+
+import net.bytebuddy.asm.Advice.This;
 
 @Entity
 @Table(name = "doctor_details")
@@ -30,10 +30,7 @@ public class DoctorDetails implements Serializable{
 	
 	@Column(name = "doctor_id")
 	private String doctorId;
-    
-	
-	@NotBlank(message = "Name may not be empty")
-	//@Size(min = 2, max = 32, message = "Name must be between 2 and 32 characters long") 
+
 	@Column(name = "firstName")
 	private String firstName;
 

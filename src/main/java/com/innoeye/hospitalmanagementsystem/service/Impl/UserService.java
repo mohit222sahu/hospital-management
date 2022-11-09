@@ -26,9 +26,10 @@ public class UserService  implements IUserService {
 		
 		
 		for(User use:users) {
-			if(use.getUserName().equals(user.getUserName())&&use.getPassword().equals(user.getPassword()))
+			if(use.getUserName().equals(user.getUserName())&&use.getPassword().equals(user.getPassword())) {
 				logger.info("login sucessfull.");
 				return true;
+			}
 		}
 		return false;
 	}

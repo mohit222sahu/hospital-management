@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.innoeye.hospitalmanagementsystem.model.User;
 
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RequestMapping(path="/user")
 public interface IUserController {
 	

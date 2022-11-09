@@ -79,9 +79,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.innoeye.hospitalmanagementsystem.controller.IPatientController;
 import com.innoeye.hospitalmanagementsystem.model.PatientDetails;
 import com.innoeye.hospitalmanagementsystem.service.IPatientService;
-@CrossOrigin
 @RestController
-@RequestMapping("/patient")
 public class PatientController implements IPatientController{
 	
 	private static final Logger logger = LoggerFactory.getLogger(PatientController.class);

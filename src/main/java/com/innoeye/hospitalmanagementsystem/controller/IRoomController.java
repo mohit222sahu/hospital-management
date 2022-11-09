@@ -2,8 +2,6 @@ package com.innoeye.hospitalmanagementsystem.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,8 +27,6 @@ public interface IRoomController {
 	response = RoomDetails.class)
 	public RoomDetails addRoom(@RequestBody RoomDetails room );
 	
-	
-	
 	@GetMapping(path="/deleteRoom/{roomId}")
 	@ApiOperation(value = "Delete Room Details By Room Id")
 	public void deleteRoom(@PathVariable String roomId);
@@ -39,9 +35,6 @@ public interface IRoomController {
 	@ApiOperation(value = "Get Room Details By Room Id",
 	response = RoomDetails.class)
 	public RoomDetails getRoomByNo(@PathVariable Integer roomId);
-
-	@GetMapping(path="/addNote/{note}")
-	String addNote(String note, HttpServletRequest request);
 
 	
 }

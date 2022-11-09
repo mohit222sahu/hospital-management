@@ -15,10 +15,6 @@ public class ErrorMessage {
     this.message = message;
     this.description = description;
   }
-  
-  public ErrorMessage() {
-	  
-  }
 
   public int getStatusCode() {
     return statusCode;
@@ -35,20 +31,4 @@ public class ErrorMessage {
   public String getDescription() {
     return description;
   }
-  
-  public void display(Object s){
-		System.out.println("display object");
-	}
-	public void display(String s){	
-		System.out.println("display String");
-	}
-
-    
-    
-    public static void main(String[] args) {
-    	System.out.println("main");
-    	ErrorMessage error  = new ErrorMessage();
-    	error.display("mohit");
-    	
-	}
 }

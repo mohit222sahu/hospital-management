@@ -11,7 +11,6 @@ import com.innoeye.hospitalmanagementsystem.model.User;
 import com.innoeye.hospitalmanagementsystem.service.IUserService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
 public class UserController implements IUserController {
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 

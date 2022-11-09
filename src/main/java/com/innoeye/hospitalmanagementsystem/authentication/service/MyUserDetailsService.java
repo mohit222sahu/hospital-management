@@ -24,14 +24,15 @@ public class MyUserDetailsService implements UserDetailsService {
 	public UserDetails loadUserByUsername(String userName) throws HospitalException {
 		User user;
 		try {
-			System.out.println("inside loadUserByUsername = "+userName);
+			System.out.println("inside loadUserByUsername method userName = "+userName);
 			user = userDao.getUserDetailsByParameters(userName);
-			
+			System.out.println(user);
 			if (user == null) {
 				throw new HospitalException("User not found with username: " + userName);
 			}
-			System.out.println("user name is "+ user);
-			return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(),new ArrayList<>());
+			log.info("user name is :{}", user.getUserName());
+			return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(),
+					new ArrayList<>());
 		} catch (HospitalException e) {
 			throw e;
 		}

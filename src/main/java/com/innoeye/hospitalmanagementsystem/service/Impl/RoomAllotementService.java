@@ -57,7 +57,7 @@ return roomAllotementDAO.findByPatientId(patientId);
 		
 		logger.info(" roomAllotement deleted   tId : "+roomAllotementId);
 
-		roomDAO.findByRoomNo(roomAllotementId.getRoom().getRoomNo()).setIsBooked(false);
+		roomDAO.findByRoomNo(roomAllotementId.getRoom().getRoomNo()).setIs_booked(false);
 		
 		roomAllotementDAO.delete(roomAllotementId);
 		}
@@ -68,7 +68,7 @@ return roomAllotementDAO.findByPatientId(patientId);
 		
 		logger.info("roomAllotement updated sucessfull called ..");		
 		
-		roomDAO.findByRoomNo(roomAllotement.getRoom().getRoomNo()).setIsBooked(false);
+		roomDAO.findByRoomNo(roomAllotement.getRoom().getRoomNo()).setIs_booked(false);
 				
 		roomAllotementDAO.save(roomAllotement);
 		

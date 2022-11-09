@@ -123,7 +123,6 @@ public class PatientService implements IPatientService{
 
 	@Override
 	public ResponseEntity<List<PatientDetails>> patientList() {
-		
 		logger.info("patien patientList method called ");
 		List<PatientDetails> patient = pr.findAll();
 		if (patient.size() == 0)
